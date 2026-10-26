@@ -43,6 +43,7 @@ p{margin:0}
 .sec-head h2{font-size:clamp(32px,4.4vw,52px)}
 .sec-head p{color:var(--ink-2);margin-top:14px;font-size:17px}
 section{padding:96px 0}
+section[id],footer[id]{scroll-margin-top:calc(var(--header-h) + 20px)}
 .btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;border:2px solid var(--ink);background:var(--ink);color:#fff;font-weight:700;font-size:15px;padding:15px 30px;border-radius:999px;transition:transform .18s ease,background .18s ease,color .18s ease,border-color .18s ease;white-space:nowrap}
 .btn:hover{background:var(--accent);border-color:var(--accent);transform:translateY(-2px)}
 .btn:active{transform:translateY(0)}
@@ -58,9 +59,9 @@ section{padding:96px 0}
 
 /* ---------- Announcement bar ---------- */
 .announce{background:var(--ink);color:#fff;overflow:hidden;position:relative;z-index:60}
-.announce-inner{display:flex;justify-content:center;align-items:center;height:40px;font-size:12.5px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;text-align:center;padding:0 16px}
-.announce-msg{position:absolute;opacity:0;transform:translateY(8px);transition:opacity .45s ease,transform .45s ease;pointer-events:none}
-.announce-msg.on{opacity:1;transform:none;position:relative;pointer-events:auto}
+.announce-inner{position:relative;height:40px;font-size:12.5px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;text-align:center}
+.announce-msg{position:absolute;left:16px;right:16px;top:50%;transform:translateY(-50%);opacity:0;transition:opacity .38s ease;pointer-events:none}
+.announce-msg.on{opacity:1;pointer-events:auto;transition:opacity .38s ease .4s}
 .announce-msg b{color:#ffb59a;font-weight:800}
 
 /* ---------- Header ---------- */
@@ -310,7 +311,7 @@ footer p{font-size:14.5px;color:#b9b7b1;line-height:1.6}
 .qty output{width:44px;text-align:center;font-weight:800;font-size:16px}
 .tier-note{font-size:13px;color:var(--ink-2);background:var(--wash);border-radius:10px;padding:11px 15px;margin-top:14px;line-height:1.5}
 .tier-note b{color:var(--green)}
-.upload{border:2px dashed #cfccc4;border-radius:14px;padding:22px;text-align:center;background:#fff;transition:border-color .2s,background .2s;cursor:pointer}
+.upload{display:flex;flex-direction:column;align-items:center;justify-content:center;width:100%;border:2px dashed #cfccc4;border-radius:14px;padding:26px 22px;text-align:center;background:#fff;transition:border-color .2s,background .2s;cursor:pointer}
 .upload:hover,.upload.drag{border-color:var(--accent);background:#fff7f2}
 .upload svg{width:30px;height:30px;color:var(--accent);margin:0 auto 8px}
 .upload b{font-size:15px;display:block}
